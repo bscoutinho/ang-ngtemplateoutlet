@@ -1,0 +1,57 @@
+<app-card
+  [data]="dataAtual"
+  titulo="Card Exemplo 1"
+  conteudo="Comportamento padrão do card. É
+            exibido um título, data e um texto">
+</app-card>
+
+<app-card
+  [data]="dataAtual"
+  titulo="Card Exemplo 2"
+  conteudo="Customizando parte do template
+            através da injeção de um template
+            customizado para incluir um botão
+            ao lado da data">
+  <ng-template #tmpHeader let-data="dataFormatada">
+    <div style="display: flex; align-items: center">
+      <div>{{data}}</div>
+      <div>
+        <input
+          type="button"
+          value="?"
+          title="Ajuda">
+      </div>
+    </div>
+  </ng-template>
+</app-card>
+
+<app-card
+  [data]="dataAtual"
+  titulo="Card Exemplo 3"
+  conteudo="Customizando parte do template
+            através da injeção de um template
+            customizado para criar botão
+            com o texto da data.">
+  <ng-template #tmpHeader let-data="dataFormatada">
+    <input type="button" [value]="data">
+  </ng-template>
+</app-card>
+
+<app-card
+  [data]="dataAtual"
+  titulo="Card Exemplo 4"
+  conteudo="Card Teste">
+    <ng-template #tmpHeader let-data="dataFormatada">
+      Meu template: {{data}}
+    </ng-template>
+</app-card>
+
+<app-card
+  [data]="dataAtual"
+  titulo="Card Exemplo 5"
+  conteudo="Card Teste">
+    <ng-template #tmpHeader let-data="dataFormatada">
+      {{data}} - 
+      <a href="https://consolelog.com.br">consolelog.com.br</a>
+    </ng-template>
+</app-card>

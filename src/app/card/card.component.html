@@ -1,0 +1,16 @@
+<div class="card">
+    <div class="titulo">
+        <div>{{titulo}}</div>
+        <div>
+            <ng-container
+                [ngTemplateOutlet]="(headerCustomizado || header)"
+                [ngTemplateOutletContext]="{ dataFormatada: (data | date) }">
+            </ng-container>
+        </div>
+    </div>
+    <div class="conteudo">{{conteudo}}</div>
+</div>
+
+<ng-template #header let-data="dataFormatada">
+    {{data}}
+</ng-template>

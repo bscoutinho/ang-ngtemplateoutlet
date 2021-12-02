@@ -1,0 +1,12 @@
+/* Add application styles & imports to this file! */
+html, body {
+    background: #efefef;
+}
+
+input {
+    background: #2352b6;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
